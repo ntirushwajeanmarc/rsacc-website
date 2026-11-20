@@ -23,13 +23,13 @@ export default function About() {
 
   return (
     <section id="about" className="section-padding bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Section */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 transform rotate-3">
-              <div className="bg-white rounded-xl p-6 transform -rotate-3 shadow-2xl">
-                <div className="aspect-w-4 aspect-h-5 bg-gray-200 rounded-lg flex items-center justify-center">
+            <div className="gradient-brand-r rounded-2xl p-8 rotate-3">
+              <div className="bg-white rounded-2xl p-6 -rotate-3 shadow-2xl">
+                <div className="aspect-[4/5] bg-gray-200 rounded-lg flex items-center justify-center">
                   <div className="text-center text-gray-500">
                     <UserGroupIcon className="w-16 h-16 mx-auto mb-4 text-primary" />
                     <p className="text-lg font-medium">RSACC Team</p>
@@ -41,7 +41,7 @@ export default function About() {
             
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary rounded-full opacity-20 animate-pulse delay-1000"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary rounded-full opacity-20 animate-pulse animation-delay-1000"></div>
           </div>
 
           {/* Content Section */}
@@ -60,10 +60,10 @@ export default function About() {
               {features.map((feature, index) => (
                 <div 
                   key={index}
-                  className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
+                  className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
                         <feature.icon className="w-6 h-6 text-white" />
                       </div>

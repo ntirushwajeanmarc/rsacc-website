@@ -55,7 +55,7 @@ export default function Gallery() {
 
   return (
     <section className="section-padding bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container-page">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -71,14 +71,14 @@ export default function Gallery() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
           >
             <ChevronLeftIcon className="w-6 h-6 text-primary" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-6 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
           >
             <ChevronRightIcon className="w-6 h-6 text-primary" />
           </button>
@@ -88,7 +88,7 @@ export default function Gallery() {
             {visibleImages.map((image, index) => (
               <div 
                 key={image.id}
-                className="group relative bg-gradient-to-br from-primary to-secondary rounded-2xl overflow-hidden card-hover animate-fadeInUp"
+                className="group relative gradient-brand-br rounded-2xl overflow-hidden card-hover animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Image Placeholder */}
@@ -106,7 +106,7 @@ export default function Gallery() {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
-                  <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <h3 className="text-xl font-bold mb-2">{image.title}</h3>
                     <p className="text-white/90 text-sm">{image.description}</p>
                     <button className="mt-4 bg-white text-primary px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">

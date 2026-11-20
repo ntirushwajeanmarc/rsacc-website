@@ -42,19 +42,16 @@ export default function AboutUsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-secondary text-white py-20 overflow-hidden">
+      <section className="relative gradient-brand-br text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div className="absolute inset-0 hero-pattern"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container-page relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
               About RSACC
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp [animation-delay:100ms]">
               Rwanda Society of Anesthesia and Critical Care - Leading the advancement of anesthesia and critical care excellence in Rwanda
             </p>
           </div>
@@ -63,31 +60,31 @@ export default function AboutUsPage() {
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg card-hover animate-fadeInUp">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4">
+            <div className="card p-6 text-center card-hover animate-fadeInUp">
+              <div className="inline-flex items-center justify-center w-16 h-16 gradient-brand-br rounded-full mb-4">
                 <TrophyIcon className="w-8 h-8 text-white" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">3+</div>
               <div className="text-gray-600 font-medium">Awards Win</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg card-hover animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4">
+            <div className="card p-6 text-center card-hover animate-fadeInUp [animation-delay:100ms]">
+              <div className="inline-flex items-center justify-center w-16 h-16 gradient-brand-br rounded-full mb-4">
                 <UserGroupIcon className="w-8 h-8 text-white" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">1.5K</div>
               <div className="text-gray-600 font-medium">Happy Customers</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg card-hover animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4">
+            <div className="card p-6 text-center card-hover animate-fadeInUp [animation-delay:200ms]">
+              <div className="inline-flex items-center justify-center w-16 h-16 gradient-brand-br rounded-full mb-4">
                 <HeartIcon className="w-8 h-8 text-white" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">98%</div>
               <div className="text-gray-600 font-medium">Satisfaction</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg card-hover animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4">
+            <div className="card p-6 text-center card-hover animate-fadeInUp [animation-delay:300ms]">
+              <div className="inline-flex items-center justify-center w-16 h-16 gradient-brand-br rounded-full mb-4">
                 <AcademicCapIcon className="w-8 h-8 text-white" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">12+</div>
@@ -105,7 +102,7 @@ export default function AboutUsPage() {
 
       {/* Objectives Section */}
       <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               True Healthcare For A Nation
@@ -119,12 +116,12 @@ export default function AboutUsPage() {
             {objectives.map((objective, index) => (
               <div 
                 key={index}
-                className="bg-gray-50 rounded-xl p-6 card-hover animate-fadeInUp"
+                className="bg-gray-50 rounded-2xl p-6 card-hover animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                  <div className="shrink-0">
+                    <div className="w-12 h-12 gradient-brand-br rounded-lg flex items-center justify-center">
                       <objective.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -144,8 +141,8 @@ export default function AboutUsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="container mx-auto px-4">
+      <section className="section-padding gradient-brand-br text-white">
+        <div className="container-page">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Community
@@ -156,13 +153,13 @@ export default function AboutUsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact"
-                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-block"
+                className="btn-light inline-block"
               >
                 Contact Us
               </a>
               <a 
                 href="/members"
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 inline-block"
+                className="btn-outline-light inline-block"
               >
                 View Members
               </a>

@@ -36,11 +36,11 @@ export default function Hero() {
   }, [slides.length])
 
   return (
-    <section className="relative bg-gradient-to-r from-primary to-secondary text-white min-h-screen flex items-center">
+    <section className="relative gradient-brand text-white min-h-screen flex items-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container-page relative z-10">
         <div className="max-w-4xl">
           {/* Slide Content */}
           <div className="space-y-6 animate-fadeInUp">
@@ -66,7 +66,7 @@ export default function Hero() {
                 <a
                   key={index}
                   href={button.href}
-                  className={`inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 transform hover:scale-105 ${
+                  className={`inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 ${
                     index === 0 
                       ? 'bg-secondary hover:bg-primary text-white' 
                       : 'bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
@@ -81,7 +81,7 @@ export default function Hero() {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
         </div>

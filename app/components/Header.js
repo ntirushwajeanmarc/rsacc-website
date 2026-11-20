@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 export default function Header() {
@@ -27,7 +28,7 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top Bar */}
       <div className="bg-gray-50 text-primary py-2">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
               <span>Welcome to RSACC</span>
@@ -42,15 +43,20 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4">
+      <div className="container-page">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                RSACC
-              </div>
-              <div className="ml-3">
+          <div className="shrink-0">
+            <a href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo-rsacc.png"
+                alt="RSACC logo"
+                width={128}
+                height={128}
+                priority
+                className="h-12 w-12"
+              />
+              <div>
                 <h1 className="text-xl font-bold text-primary">RSACC</h1>
                 <p className="text-xs text-gray-500">Rwanda Society of Anesthesia & Critical Care</p>
               </div>
@@ -126,9 +132,9 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                className="field"
               />
-              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-secondary">
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-secondary">
                 <MagnifyingGlassIcon className="w-5 h-5" />
               </button>
             </div>

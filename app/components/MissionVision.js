@@ -12,25 +12,25 @@ export default function MissionVision() {
       icon: HeartIcon,
       title: "Our Mission",
       description: "To improve patient outcomes in anesthesia and critical care through professional development, advocacy, and promotion of best practices in the field.",
-      color: "from-red-400 to-pink-600"
+      color: "from-primary to-secondary"
     },
     {
       icon: AcademicCapIcon,
       title: "Our Vision",
       description: "To be a leading professional society in Africa, recognized for improving healthcare standards and patient safety in anesthesia and critical care.",
-      color: "from-blue-400 to-indigo-600"
+      color: "from-secondary to-primary"
     },
     {
       icon: ShieldCheckIcon,
       title: "Our Values",
       description: "Excellence, Integrity, Collaboration, Innovation, and Compassion.",
-      color: "from-green-400 to-emerald-600"
+      color: "from-dark to-secondary"
     }
   ]
 
   return (
     <section className="section-padding bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container-page">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -46,11 +46,11 @@ export default function MissionVision() {
           {values.map((value, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg card-hover animate-fadeInUp"
+              className="card group p-8 card-hover animate-fadeInUp"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 group-hover:scale-110`}>
+              <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-6 mx-auto transition-transform duration-300 group-hover:scale-110`}>
                 <value.icon className="w-8 h-8 text-white" />
               </div>
 
@@ -71,7 +71,7 @@ export default function MissionVision() {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+        <div className="mt-16 card p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-bold text-primary mb-4">
@@ -95,7 +95,7 @@ export default function MissionVision() {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-primary to-secondary rounded-xl p-8 text-white">
+            <div className="gradient-brand-br rounded-2xl p-8 text-white">
               <div className="text-center">
                 <AcademicCapIcon className="w-16 h-16 mx-auto mb-4 opacity-80" />
                 <h4 className="text-2xl font-bold mb-4">Professional Growth</h4>

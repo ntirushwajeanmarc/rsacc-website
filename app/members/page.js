@@ -159,20 +159,17 @@ export default function MembersPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-secondary text-white py-20 overflow-hidden">
+      <section className="relative gradient-brand-br text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div className="absolute inset-0 hero-pattern"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container-page relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <UserGroupIcon className="w-16 h-16 mx-auto mb-6 text-white/80" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
               Our Members
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp [animation-delay:100ms]">
               Meet the dedicated professionals advancing anesthesia and critical care in Rwanda
             </p>
           </div>
@@ -181,21 +178,21 @@ export default function MembersPage() {
 
       {/* Stats Section */}
       <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+            <div className="card p-6 text-center">
               <div className="text-4xl font-bold text-primary mb-2">200+</div>
               <div className="text-gray-600 font-medium">Total Members</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+            <div className="card p-6 text-center">
               <div className="text-4xl font-bold text-primary mb-2">15</div>
               <div className="text-gray-600 font-medium">Institutions</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+            <div className="card p-6 text-center">
               <div className="text-4xl font-bold text-primary mb-2">10+</div>
               <div className="text-gray-600 font-medium">Specialties</div>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+            <div className="card p-6 text-center">
               <div className="text-4xl font-bold text-primary mb-2">25+</div>
               <div className="text-gray-600 font-medium">Years Combined</div>
             </div>
@@ -205,17 +202,17 @@ export default function MembersPage() {
 
       {/* Search and Filter Section */}
       <section className="py-8 bg-white sticky top-0 z-40 shadow-sm">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between max-w-4xl mx-auto">
             {/* Search Bar */}
             <div className="relative flex-1 w-full">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search by name, position, or institution..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="field pl-10"
               />
             </div>
             
@@ -227,7 +224,7 @@ export default function MembersPage() {
                   onClick={() => setSelectedRole(role.value)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
                     selectedRole === role.value
-                      ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
+                      ? 'gradient-brand text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:shadow-md'
                   }`}
                 >
@@ -241,19 +238,19 @@ export default function MembersPage() {
 
       {/* Members Grid */}
       <section className="section-padding">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredMembers.map((member, index) => (
               <div 
                 key={member.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeInUp"
+                className="card overflow-hidden card-hover animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 {/* Member Header */}
-                <div className="bg-gradient-to-br from-primary to-secondary p-6 text-white relative">
+                <div className="gradient-brand-br p-6 text-white relative">
                   <div className="absolute top-4 right-4">
                     {member.role === 'leadership' && (
-                      <span className="bg-yellow-500 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-primary px-3 py-1 rounded-full text-xs font-semibold">
                         Leadership
                       </span>
                     )}
@@ -274,7 +271,7 @@ export default function MembersPage() {
                 {/* Member Details */}
                 <div className="p-6 space-y-4">
                   <div className="flex items-start space-x-3">
-                    <BriefcaseIcon className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                    <BriefcaseIcon className="w-5 h-5 text-secondary shrink-0 mt-1" />
                     <div>
                       <div className="text-sm text-gray-500 mb-1">Institution</div>
                       <div className="text-gray-700 font-medium">{member.institution}</div>
@@ -282,7 +279,7 @@ export default function MembersPage() {
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <AcademicCapIcon className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                    <AcademicCapIcon className="w-5 h-5 text-secondary shrink-0 mt-1" />
                     <div>
                       <div className="text-sm text-gray-500 mb-1">Specialty</div>
                       <div className="text-gray-700 font-medium">{member.specialty}</div>
@@ -329,7 +326,7 @@ export default function MembersPage() {
 
       {/* Membership Benefits Section */}
       <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-primary mb-4">
@@ -361,10 +358,10 @@ export default function MembersPage() {
               ].map((benefit, index) => (
                 <div 
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg card-hover"
+                  className="card p-6 card-hover"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 gradient-brand-br rounded-lg flex items-center justify-center shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -381,7 +378,7 @@ export default function MembersPage() {
             <div className="text-center">
               <a
                 href="/contact"
-                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block"
+                className="btn-brand inline-block"
               >
                 Apply for Membership
               </a>

@@ -82,20 +82,17 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-secondary text-white py-20 overflow-hidden">
+      <section className="relative gradient-brand-br text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div className="absolute inset-0 hero-pattern"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container-page relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <EnvelopeIcon className="w-16 h-16 mx-auto mb-6 text-white/80" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
               Contact Us
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fadeInUp [animation-delay:100ms]">
               Get in touch with us for any questions, membership inquiries, or collaboration opportunities
             </p>
           </div>
@@ -104,15 +101,15 @@ export default function ContactPage() {
 
       {/* Quick Contact Info */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover text-center animate-fadeInUp"
+                className="card p-6 card-hover text-center animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 gradient-brand-br rounded-full mb-4">
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">
@@ -136,7 +133,7 @@ export default function ContactPage() {
 
       {/* Departments Section */}
       <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-primary mb-4">
               Contact Our Departments
@@ -150,7 +147,7 @@ export default function ContactPage() {
             {departments.map((dept, index) => (
               <div 
                 key={index}
-                className="bg-gray-50 rounded-xl p-6 card-hover animate-fadeInUp"
+                className="bg-gray-50 rounded-2xl p-6 card-hover animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <h3 className="text-xl font-bold text-primary mb-3">
@@ -183,7 +180,7 @@ export default function ContactPage() {
 
       {/* Map Section */}
       <section className="section-padding bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-primary mb-4">
               Find Us Here
@@ -194,23 +191,22 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
+            <div className="card overflow-hidden">
+              <div className="aspect-video bg-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4865884324595!2d30.0589!3d-1.9578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNTcnMjguMSJTIDMwwrAwMyczMi4wIkU!5e0!3m2!1sen!2srw!4v1234567890"
                   width="100%"
                   height="450"
-                  style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
+                  className="w-full h-full border-0"
                   title="RSACC Location Map"
                 ></iframe>
               </div>
-              <div className="p-6 bg-gradient-to-r from-primary to-secondary text-white">
+              <div className="p-6 gradient-brand text-white">
                 <div className="flex items-start space-x-4">
-                  <MapPinIcon className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <MapPinIcon className="w-6 h-6 shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-bold mb-2">Our Address</h3>
                     <p className="text-white/90">
@@ -228,7 +224,7 @@ export default function ContactPage() {
 
       {/* FAQ Section */}
       <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container-page">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-primary mb-4">
@@ -264,7 +260,7 @@ export default function ContactPage() {
               ].map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-gray-50 rounded-xl p-6 card-hover animate-fadeInUp"
+                  className="bg-gray-50 rounded-2xl p-6 card-hover animate-fadeInUp"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <h3 className="text-lg font-bold text-primary mb-3">
@@ -293,8 +289,8 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media & Additional Links */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="container mx-auto px-4">
+      <section className="section-padding gradient-brand-br text-white">
+        <div className="container-page">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               Stay Connected
@@ -312,7 +308,7 @@ export default function ContactPage() {
                 <a
                   key={index}
                   href="#"
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur rounded-lg px-6 py-3 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur rounded-lg px-6 py-3 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={social.icon} />

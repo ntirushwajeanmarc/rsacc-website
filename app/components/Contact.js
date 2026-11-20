@@ -37,15 +37,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-br from-primary to-secondary text-white">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="section-padding gradient-brand-br text-white">
+      <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="space-y-8">
             {/* Section Header */}
             <div className="space-y-4">
               <div className="inline-block">
-                <span className="text-white/80 font-semibold text-lg uppercase tracking-wider">
+                <span className="eyebrow-light">
                   Contact Us
                 </span>
               </div>
@@ -68,7 +68,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Full Name"
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                    className="field-brand"
                   />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Phone Number"
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                    className="field-brand"
                   />
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Email Address"
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                    className="field-brand"
                   />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Subject"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                    className="field-brand"
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                   placeholder="Your Message"
                   rows="6"
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 resize-none"
+                  className="field-brand resize-none"
                 ></textarea>
               </div>
 
@@ -137,7 +137,7 @@ export default function Contact() {
                 <div className="text-right">
                   <button
                     type="submit"
-                    className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                    className="btn-light"
                   >
                     Send Message
                   </button>
@@ -150,7 +150,7 @@ export default function Contact() {
           <div className="space-y-8">
             {/* Map Placeholder */}
             <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
-              <div className="aspect-w-16 aspect-h-9 bg-white/20 rounded-xl flex items-center justify-center">
+              <div className="aspect-video bg-white/20 rounded-xl flex items-center justify-center">
                 <div className="text-center text-white/80">
                   <MapPinIcon className="w-12 h-12 mx-auto mb-4" />
                   <p className="text-lg font-semibold">Our Location</p>
@@ -166,7 +166,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 gap-6">
               {/* Address */}
               <div className="flex items-start space-x-4 bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <MapPinIcon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -178,7 +178,7 @@ export default function Contact() {
 
               {/* Email */}
               <div className="flex items-start space-x-4 bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <EnvelopeIcon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export default function Contact() {
 
               {/* Phone */}
               <div className="flex items-start space-x-4 bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <PhoneIcon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -213,13 +213,13 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/membership"
-                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                className="btn-light"
               >
                 Join RSACC
               </a>
               <a 
                 href="/events"
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                className="btn-outline-light"
               >
                 View Events
               </a>

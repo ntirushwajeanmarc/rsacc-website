@@ -55,11 +55,11 @@ export default function Members() {
 
   return (
     <section id="members" className="section-padding bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container-page">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="text-secondary font-semibold text-lg uppercase tracking-wider">
+            <span className="eyebrow">
               Meet Our Team
             </span>
           </div>
@@ -76,14 +76,14 @@ export default function Members() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
           >
             <ChevronLeftIcon className="w-6 h-6 text-primary" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
           >
             <ChevronRightIcon className="w-6 h-6 text-primary" />
           </button>
@@ -93,11 +93,11 @@ export default function Members() {
             {visibleMembers.map((member, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeInUp"
+                className="card overflow-hidden card-hover animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Member Image */}
-                <div className="relative h-64 bg-gradient-to-br from-primary to-secondary">
+                <div className="relative h-64 gradient-brand-br">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <UserGroupIcon className="w-20 h-20 text-white opacity-80" />
                   </div>

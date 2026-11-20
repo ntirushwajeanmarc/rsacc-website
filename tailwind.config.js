@@ -1,33 +1,62 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+      },
+    },
     extend: {
       colors: {
         primary: '#091D3E',
         secondary: '#33B9CB',
-        accent: '#091D3E',
         dark: '#152847',
-        'dark-light': '#1c2f4d',
-        gray: {
-          50: '#F8F8F8',
-          100: '#E8E8E8',
-          500: '#565872',
-        }
+        'dark-light': '#1C2F4D',
       },
       fontFamily: {
-        'rubik': ['Rubik', 'sans-serif'],
-        'jost': ['Jost', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animationDelay: {
+        100: '100ms',
+        200: '200ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+        700: '700ms',
+        1000: '1000ms',
+      },
+      keyframes: {
+        fadeInUp: {
+          from: { opacity: '0', transform: 'translateY(1.875rem)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInLeft: {
+          from: { opacity: '0', transform: 'translateX(-1.875rem)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          from: { opacity: '0', transform: 'translateX(1.875rem)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        fadeInUp: 'fadeInUp 600ms ease-out both',
+        slideInLeft: 'slideInLeft 600ms ease-out both',
+        slideInRight: 'slideInRight 600ms ease-out both',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // `animation-delay-100` … `animation-delay-1000` for staggered animations.
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        { 'animation-delay': (value) => ({ animationDelay: value }) },
+        { values: theme('animationDelay') }
+      )
+    },
+  ],
 }
